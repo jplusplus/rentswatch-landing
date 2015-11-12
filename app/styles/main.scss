@@ -114,15 +114,24 @@ $link-color: mix($brand-primary, $text-color);
       @include animation(glowing 6s ease-in-out infinite);
     }
 
-    &__jpp {
+    &__credits {
       position:absolute;
       left:50%;
       top:50%;
       z-index:40;
       font-weight: bold;
-      background: darken($brand-primary, 10);
-      padding:5px;
       @include transform( translate(20px, -30px) skewY(-17deg) );
+
+      span {
+        background: darken($brand-primary, 10);
+        display: inline-block;
+        padding:5px;
+        margin-right:5px;
+
+        img {
+          height:1em;
+        }
+      }
     }
   }
 
