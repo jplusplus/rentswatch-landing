@@ -164,6 +164,8 @@ gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
 
-gulp.task('gh-pages', ['build'], function() {
-  gulp.src("./dist/**/*").pipe($.ghPages());
+gulp.task('deploy', ['build'], function() {
+  gulp.src("./dist/**/*").pipe($.ghPages({
+    remoteUrl: "git@github.com:jplusplus/rentswatch-landing.git"
+  }));
 });
