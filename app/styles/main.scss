@@ -10,10 +10,10 @@ $link-color: mix($brand-primary, $text-color);
 // endbower
 
 @mixin transform($transform) {
+          transform: $transform;
   -webkit-transform: $transform;
       -ms-transform: $transform; // IE9 only
        -o-transform: $transform;
-          transform: $transform;
 }
 
 
@@ -59,12 +59,14 @@ $link-color: mix($brand-primary, $text-color);
 
 .main {
 
+
   position:fixed;
   top:0;
   left:0;
   right:0;
   bottom:0;
   overflow: hidden;
+  display: block;
 
   &:after {
     content:"";
@@ -75,8 +77,9 @@ $link-color: mix($brand-primary, $text-color);
     right:-50%;
     bottom:-50%;
     min-height:400px;
-    background:$brand-primary;
-    @include rotate(-17deg);
+    background: $brand-primary;
+    display: block;
+    @include transform(rotate(-17deg));
   }
 
   &__brand {
@@ -97,7 +100,7 @@ $link-color: mix($brand-primary, $text-color);
       position:absolute;
       right:50%;
       top:50%;
-      @include translate(0, -70%);
+      @include transform(translate(0, -70%));
     }
 
     &__punchline  {
@@ -110,6 +113,7 @@ $link-color: mix($brand-primary, $text-color);
       color:rgba($text-color, 0.7);
       font-variant: small-caps;
       font-size:150%;
+      display: block;
       @include transform( translate(20px, -80px) skewY(-17deg) );
       @include animation(glowing 6s ease-in-out infinite);
     }
@@ -120,6 +124,7 @@ $link-color: mix($brand-primary, $text-color);
       top:50%;
       z-index:40;
       font-weight: bold;
+      display: block;
       @include transform( translate(20px, -50px) skewY(-17deg) );
 
       span {
