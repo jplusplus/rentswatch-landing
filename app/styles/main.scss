@@ -82,6 +82,13 @@ $link-color: mix($brand-primary, $text-color);
     @include transform(rotate(-17deg));
   }
 
+  &__miz {
+    z-index:200;
+    position: absolute;
+    bottom:20px;
+    right:20px;
+  }
+
   &__brand {
 
     &:after {
